@@ -1,0 +1,82 @@
+{
+	"name": "AzureSqlTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "la_azureSqlDb",
+			"type": "LinkedServiceReference",
+			"parameters": {
+				"ServerName": "thisserver.database.windows.net"
+			}
+		},
+		"parameters": {
+			"outputTable": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "ProductID",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Name",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductNumber",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Color",
+				"type": "nvarchar"
+			},
+			{
+				"name": "StandardCost",
+				"type": "varchar"
+			},
+			{
+				"name": "ListPrice",
+				"type": "varchar"
+			},
+			{
+				"name": "Size",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Weight",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductCategoryID",
+				"type": "varchar"
+			},
+			{
+				"name": "ProductModelID",
+				"type": "varchar"
+			},
+			{
+				"name": "SellStartDate",
+				"type": "varchar"
+			},
+			{
+				"name": "SellEndDate",
+				"type": "varchar"
+			},
+			{
+				"name": "ModifiedDate",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().outputTable",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

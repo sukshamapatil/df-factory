@@ -1,0 +1,23 @@
+{
+	"name": "adf2108",
+	"properties": {
+		"globalParameters": {
+			"globalServerName": {
+				"type": "string",
+				"value": "thisserver.database.windows.net"
+			}
+		}
+	},
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "b48a90cd-a19e-4ba7-9f25-884edd5fed5d",
+		"tenantId": "20410dd0-85e8-4fa8-b4f3-d8576ca36afc",
+		"userAssignedIdentities": {
+			"/subscriptions/6fd4a717-eb39-4064-b950-1a4c86d308e2/resourcegroups/rg_sqldb/providers/Microsoft.ManagedIdentity/userAssignedIdentities/suksh": {
+				"clientId": "6d45b5b0-5812-4fb4-9def-997bdf7bb21f",
+				"principalId": "86e54d99-9902-4a72-8165-6814e4aa30a2"
+			}
+		}
+	}
+}

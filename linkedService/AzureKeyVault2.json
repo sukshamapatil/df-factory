@@ -1,0 +1,11 @@
+{
+	"name": "AzureKeyVault2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://freedp1009658546499.vault.azure.net/"
+		}
+	}
+}

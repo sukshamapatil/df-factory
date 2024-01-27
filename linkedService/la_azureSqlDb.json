@@ -1,0 +1,18 @@
+{
+	"name": "la_azureSqlDb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "linked service connection to azure sql database",
+		"parameters": {
+			"ServerName": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=@{linkedService().ServerName};initial catalog=sqldb;user id=thisadmin",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDM0NDQ5OTdDLUUzNTQtNEYwMC04OEVBLTgwRkNEMzc3MURBRV8yZTUwZWJjMC00NDVkLTQ5NDQtYTQ3MS05ZDlmMTE5Y2NlMmMiDQp9"
+		}
+	}
+}
