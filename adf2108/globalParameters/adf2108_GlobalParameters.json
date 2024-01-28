@@ -1,0 +1,6 @@
+{
+	"globalServerName": {
+		"type": "string",
+		"value": "thisserver.database.windows.net"
+	}
+}

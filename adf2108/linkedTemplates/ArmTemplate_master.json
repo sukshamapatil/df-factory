@@ -1,0 +1,118 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf2108"
+		},
+		"la_azureSqlDb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'la_azureSqlDb'"
+		},
+		"ls_azuresqldb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_azuresqldb'"
+		},
+		"ls_blob_as_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob_as'"
+		},
+		"ls_sukshdatalake_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ls_sukshdatalake'"
+		},
+		"ls_sukshsynapseworkspace_pooldb_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_sukshsynapseworkspace_pooldb'"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://freedp1009658546499.vault.azure.net/"
+		},
+		"AzureKeyVault3_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://freedp1009658546499.vault.azure.net/"
+		},
+		"ls_sukshdatalake_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sukshdatalake.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf2108_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"la_azureSqlDb_connectionString": {
+						"value": "[parameters('la_azureSqlDb_connectionString')]"
+					},
+					"ls_azuresqldb_connectionString": {
+						"value": "[parameters('ls_azuresqldb_connectionString')]"
+					},
+					"ls_blob_as_connectionString": {
+						"value": "[parameters('ls_blob_as_connectionString')]"
+					},
+					"ls_sukshdatalake_accountKey": {
+						"value": "[parameters('ls_sukshdatalake_accountKey')]"
+					},
+					"ls_sukshsynapseworkspace_pooldb_connectionString": {
+						"value": "[parameters('ls_sukshsynapseworkspace_pooldb_connectionString')]"
+					},
+					"AzureKeyVault2_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault3_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault3_properties_typeProperties_baseUrl')]"
+					},
+					"ls_sukshdatalake_properties_typeProperties_url": {
+						"value": "[parameters('ls_sukshdatalake_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "adf2108_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf2108_ArmTemplate_0')]"
+			]
+		}
+	]
+}

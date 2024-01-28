@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf2108"
+		},
+		"la_azureSqlDb_connectionString": {
+			"value": ""
+		},
+		"ls_azuresqldb_connectionString": {
+			"value": ""
+		},
+		"ls_blob_as_connectionString": {
+			"value": ""
+		},
+		"ls_sukshdatalake_accountKey": {
+			"value": ""
+		},
+		"ls_sukshsynapseworkspace_pooldb_connectionString": {
+			"value": ""
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"value": "https://freedp1009658546499.vault.azure.net/"
+		},
+		"AzureKeyVault3_properties_typeProperties_baseUrl": {
+			"value": "https://freedp1009658546499.vault.azure.net/"
+		},
+		"ls_sukshdatalake_properties_typeProperties_url": {
+			"value": "https://sukshdatalake.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
