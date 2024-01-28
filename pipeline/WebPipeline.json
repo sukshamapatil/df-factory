@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"method": "GET",
-					"url": "https://sukshdatalake.blob.core.windows.net/csv/Log.csv"
+					"url": "https://sukshdatalake.blob.core.windows.net/customer/Customer01.csv"
 				}
 			}
 		],
